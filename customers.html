@@ -2,82 +2,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Handled · Customers</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Handled – Customers</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <nav class="navbar">
-      <div class="logo">Handled<span>.</span></div>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="workers.html">Workers</a>
-        <a href="customers.html">Customers</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div>
-        <a href="workers.html" class="btn btn-outline" style="margin-right:0.5rem;">Worker</a>
-        <a href="customers.html" class="btn">Post Job</a>
-      </div>
-    </nav>
+<nav class="navbar">
+  <div class="nav-logo" onclick="location.href='index.html'">Handled</div>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="workers.html" class="nav-link">Workers</a>
+    <a href="customers.html" class="nav-link active">Customers</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+  <div class="nav-actions">
+    <a href="customers.html" class="btn btn-ghost btn-sm">Login</a>
+    <a href="customers.html" class="btn btn-primary btn-sm">Get Started</a>
+  </div>
+</nav>
 
-    <h2 class="section-title">Customer dashboard</h2>
-    <div class="two-col">
-      <div class="profile-card">
-        <h3>Login / Register</h3>
-        <form>
-          <div class="form-group"><label>Full name</label><input type="text" placeholder="Oarabile M." /></div>
-          <div class="form-group"><label>Email</label><input type="email" placeholder="customer@handled.bw" /></div>
-          <div class="form-group"><label>Password</label><input type="password" /></div>
-          <div class="form-group"><label>Phone</label><input type="text" placeholder="+267 71 234 567" /></div>
-          <button type="submit" class="btn">Login / Create account</button>
-        </form>
-      </div>
-      <div class="profile-card">
-        <h3>Post a new task</h3>
-        <form>
-          <div class="form-group"><label>Service</label>
-            <select><option>House Cleaning</option><option>Gardening</option><option>Handyman</option><option>Plumbing</option><option>Moving</option><option>Delivery</option><option>Miscellaneous</option></select>
+<div class="page active" id="customers-page">
+  <div class="section">
+    <div style="max-width:1140px;margin:0 auto;">
+      <div class="section-label">Customer Area</div>
+      <div class="section-title">Post tasks,<br>get things done.</div>
+      <p class="section-sub">Create a free account to post task requests and connect with verified workers near you.</p>
+      <div class="auth-wrap">
+        <div class="auth-box">
+          <div class="auth-box-title">Sign In / Register</div>
+          <div class="auth-box-sub">Access your Handled customer account.</div>
+          <div class="tab-row">
+            <button class="tab active" id="ct1" onclick="cSwitchTab('clogin')">Login</button>
+            <button class="tab" id="ct2" onclick="cSwitchTab('creg')">Register</button>
           </div>
-          <div class="form-group"><label>Description</label><textarea rows="2" placeholder="Describe your job..."></textarea></div>
-          <div class="form-group"><label>Preferred date &amp; time</label><input type="datetime-local" /></div>
-          <div class="form-group"><label>Pin location on map</label>
-            <div id="customerMap" class="map-container"></div>
+          <div id="clogin-form">
+            <div class="form-group"><label>Email</label><input type="email" id="cl-email" placeholder="you@email.com"></div>
+            <div class="form-group"><label>Password</label><input type="password" id="cl-pass" placeholder="••••••••"></div>
+            <button class="auth-submit" onclick="customerLogin()">Login →</button>
           </div>
-          <button type="submit" class="btn">Post job – workers will review</button>
-          <p class="transport-note" style="margin-top:0.5rem;">📍 Transport: P30 inside Gaborone · P50 outside (auto-added)</p>
-        </form>
-        <div class="photo-upload-section">
-          <p><strong>📸 After worker accepts:</strong> upload before &amp; after photos</p>
-          <button class="btn btn-outline small-btn">Before</button><button class="btn btn-outline small-btn">After</button>
+          <div id="creg-form" style="display:none;">
+            <div class="form-group"><label>Full name</label><input type="text" id="cr-name" placeholder="e.g. Neo Modise"></div>
+            <div class="form-row">
+              <div class="form-group"><label>Email</label><input type="email" id="cr-email" placeholder="you@email.com"></div>
+              <div class="form-group"><label>Password</label><input type="password" id="cr-pass" placeholder="••••••••"></div>
+            </div>
+            <div class="form-group"><label>Phone (optional)</label><input type="tel" id="cr-phone" placeholder="+267 7X XXX XXX"></div>
+            <button class="auth-submit" onclick="customerRegister()">Create Account →</button>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;"><div style="font-size:1.6rem;margin-bottom:10px;">📋</div><h4 style="font-family:'Syne',sans-serif;font-weight:700;margin-bottom:5px;">Post Any Task</h4><p style="font-size:.83rem;color:var(--muted);line-height:1.6;">Describe what you need, set a budget and location. Done in 2 minutes.</p></div>
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;"><div style="font-size:1.6rem;margin-bottom:10px;">⚡</div><h4 style="font-family:'Syne',sans-serif;font-weight:700;margin-bottom:5px;">Fast Responses</h4><p style="font-size:.83rem;color:var(--muted);line-height:1.6;">Workers typically accept within 12 minutes on average.</p></div>
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;"><div style="font-size:1.6rem;margin-bottom:10px;">🔒</div><h4 style="font-family:'Syne',sans-serif;font-weight:700;margin-bottom:5px;">Verified Workers Only</h4><p style="font-size:.83rem;color:var(--muted);line-height:1.6;">Every worker is screened and reviewed. Your safety matters.</p></div>
         </div>
       </div>
     </div>
-
-    <div class="footer">
-      <p>© 2026 Handled · built for Botswana</p>
-    </div>
   </div>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const container = document.getElementById('customerMap');
-      if (!container) return;
-      const map = L.map(container).setView([-24.6282, 25.9231], 13);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap'
-      }).addTo(map);
-      let marker = null;
-      map.on('click', function(e) {
-        if (marker) map.removeLayer(marker);
-        marker = L.marker(e.latlng).addTo(map);
-      });
-    });
-  </script>
+  <footer>
+    <div class="footer-logo">Handled</div>
+    <div class="footer-links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+    <div class="footer-copy">© 2025 Handled · Gaborone, Botswana</div>
+  </footer>
+</div>
+
+<script>
+let users = JSON.parse(localStorage.getItem('hd_users')||'{}');
+function cSwitchTab(tab){
+  document.getElementById('ct1').classList.toggle('active', tab==='clogin');
+  document.getElementById('ct2').classList.toggle('active', tab==='creg');
+  document.getElementById('clogin-form').style.display = tab==='clogin' ? '' : 'none';
+  document.getElementById('creg-form').style.display = tab==='creg' ? '' : 'none';
+}
+function customerLogin(){
+  const email = document.getElementById('cl-email').value.trim();
+  const pass = document.getElementById('cl-pass').value;
+  if(!email||!pass){alert('Fill in all fields.');return;}
+  const u = users[email];
+  if(!u||u.pass!==pass||u.role!=='customer'){alert('Invalid credentials.');return;}
+  alert('Logged in as customer: '+u.name);
+}
+function customerRegister(){
+  const name = document.getElementById('cr-name').value.trim();
+  const email = document.getElementById('cr-email').value.trim();
+  const pass = document.getElementById('cr-pass').value;
+  if(!name||!email||!pass){alert('Fill in all fields.');return;}
+  if(users[email]){alert('Account exists.');return;}
+  users[email]={name,email,pass,role:'customer'};
+  localStorage.setItem('hd_users',JSON.stringify(users));
+  alert('Customer account created! You can now login.');
+}
+</script>
 </body>
 </html>
