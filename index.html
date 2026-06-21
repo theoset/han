@@ -1,75 +1,75 @@
-<!-- index.html (Home Page) -->
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Handled · Home</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Handled – Tasks, Done.</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <nav class="navbar">
-      <div class="logo">Handled<span>.</span></div>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="workers.html">Workers</a>
-        <a href="customers.html">Customers</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+<nav class="navbar">
+  <div class="nav-logo" onclick="location.href='index.html'">Handled</div>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link active">Home</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="workers.html" class="nav-link">Workers</a>
+    <a href="customers.html" class="nav-link">Customers</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+  <div class="nav-actions" id="nav-actions">
+    <a href="customers.html" class="btn btn-ghost btn-sm">Login</a>
+    <a href="customers.html" class="btn btn-primary btn-sm">Get Started</a>
+  </div>
+</nav>
+
+<div class="page active" id="home">
+  <div class="hero">
+    <div>
+      <div class="hero-badge">✦ Botswana's Task Platform</div>
+      <h1 class="hero-title">Everything<br><span>Handled</span><br>for you.</h1>
+      <p class="hero-sub">Connect instantly with trusted local workers for gardening, cleaning, plumbing, errands and more — on demand, any day.</p>
+      <div class="hero-btns">
+        <a href="customers.html" class="btn btn-primary">Post a Task</a>
+        <a href="workers.html" class="btn btn-ghost">Become a Worker</a>
       </div>
-      <div>
-        <a href="workers.html" class="btn btn-outline" style="margin-right:0.5rem;">Worker</a>
-        <a href="customers.html" class="btn">Post Job</a>
-      </div>
-    </nav>
-
-    <!-- Hero -->
-    <div class="hero">
-      <div>
-        <p class="launch-badge">✦ Launching in Gaborone</p>
-        <h1>Trusted home services,<br/><span>handled</span> for you</h1>
-        <p>Post a job in minutes. KYC-verified workers come to you. Transparent prices — no surprises.</p>
-        <div class="hero-buttons">
-          <a href="customers.html" class="btn">Post a Job</a>
-          <a href="workers.html" class="btn btn-outline">Become a Worker</a>
-        </div>
-      </div>
-      <div class="hero-image-placeholder">📸 <br/> <span>Before / After</span></div>
     </div>
-
-    <!-- How it works -->
-    <h2 class="section-title">How it works</h2>
-    <div class="grid-3">
-      <div class="card"><strong>1. Post your task</strong><p>Choose a service, drop a pin on the map, get an instant price estimate.</p></div>
-      <div class="card"><strong>2. Verified worker accepts</strong><p>Only KYC-verified workers can take jobs. See their profile &amp; rating.</p></div>
-      <div class="card"><strong>3. Job done, photos taken</strong><p>Before &amp; after photos mandatory — accountability built in.</p></div>
-      <div class="card"><strong>4. Pay securely</strong><p>Orange Money, MyZaka, bank card, or cash. 15% platform fee.</p></div>
-    </div>
-
-    <!-- Services preview -->
-    <h2 class="section-title">Services</h2>
-    <div class="grid-3">
-      <div class="card">🏠 <h3>House Cleaning</h3><p>Single room P120 · 1BR P180 · 2BR P250 · 3BR P350 · 4+ from P450</p></div>
-      <div class="card">🌿 <h3>Gardening</h3><p>Small P120 · Medium P220 · Large P350 · X-large from P500</p></div>
-      <div class="card">🔨 <h3>Handyman</h3><p>Simple fix P120 · Assembly P180 · TV mount P250 · Repairs P150/h</p></div>
-      <div class="card">🔧 <h3>Plumbing</h3><p>Quotes from P150 · hourly rates available</p></div>
-      <div class="card">📦 <h3>Moving</h3><p>Single item P350 · Room P300 · Small house P600 · Large P1,000</p></div>
-      <div class="card">🛵 <h3>Delivery</h3><p>From P50 · inside Gaborone +P30 · outside +P50</p></div>
-    </div>
-
-    <!-- FAQ -->
-    <h2 class="section-title">FAQ</h2>
-    <div class="faq-item"><strong>How are workers verified?</strong><span class="plus">+</span></div>
-    <div class="faq-item"><strong>What if something goes wrong?</strong><span class="plus">+</span></div>
-    <div class="faq-item"><strong>How do I pay?</strong><span class="plus">+</span></div>
-    <div class="faq-item"><strong>What is the 15% platform fee?</strong><span class="plus">+</span></div>
-    <div class="faq-item"><strong>Can I cancel a job?</strong><span class="plus">+</span></div>
-
-    <div class="footer">
-      <p>© 2026 Handled · built for Botswana · 15% platform fee · KYC verified</p>
+    <div class="hero-visual">
+      <div class="float-card"><div class="fi">🌿</div><h4>Garden Trim</h4><p><span class="dot dot-g"></span>Worker on the way</p></div>
+      <div class="float-card"><div class="fi">🔧</div><h4>Pipe Leak Fix</h4><p><span class="dot dot-y"></span>Awaiting worker</p></div>
+      <div class="float-card"><div class="fi">🧹</div><h4>Deep Clean</h4><p><span class="dot dot-g"></span>Completed today</p></div>
     </div>
   </div>
+  <div class="stats-strip">
+    <div class="strip-stat"><div class="strip-num">1,200+</div><div class="strip-lbl">Tasks Completed</div></div>
+    <div class="strip-stat"><div class="strip-num">340+</div><div class="strip-lbl">Active Workers</div></div>
+    <div class="strip-stat"><div class="strip-num">4.9★</div><div class="strip-lbl">Average Rating</div></div>
+    <div class="strip-stat"><div class="strip-num">&lt;12min</div><div class="strip-lbl">Avg. Response</div></div>
+  </div>
+  <div class="section" style="padding-top:0;">
+    <div style="max-width:1140px;margin:0 auto;">
+      <div class="section-label">How it works</div>
+      <div class="section-title">Three steps to done.</div>
+      <div class="how-grid">
+        <div class="how-card"><div class="how-num">01</div><div class="how-icon">📋</div><h4>Post Your Task</h4><p>Choose a service, describe what you need, set your location and budget. Takes under two minutes.</p></div>
+        <div class="how-card"><div class="how-num">02</div><div class="how-icon">🤝</div><h4>Worker Accepts</h4><p>Online workers nearby see your request and accept it. You get notified instantly with their details.</p></div>
+        <div class="how-card"><div class="how-num">03</div><div class="how-icon">✅</div><h4>Task Complete</h4><p>The worker arrives and gets the job done. Mark it complete, leave a rating. Simple as that.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="section" style="padding-top:0;padding-bottom:80px;">
+    <div style="max-width:1140px;margin:0 auto;background:linear-gradient(135deg,rgba(240,192,64,.1),rgba(224,123,48,.05));border:1px solid rgba(240,192,64,.2);border-radius:var(--radius);padding:46px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;">
+      <div><h2 style="font-family:'Syne',sans-serif;font-size:1.55rem;font-weight:800;margin-bottom:8px;">Ready to get started?</h2><p style="color:var(--muted);font-size:.9rem;">Join hundreds already using Handled in Gaborone.</p></div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;"><a href="customers.html" class="btn btn-primary">Post a Task →</a><a href="services.html" class="btn btn-ghost">View Services</a></div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-logo">Handled</div>
+    <div class="footer-links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+    <div class="footer-copy">© 2025 Handled · Gaborone, Botswana</div>
+  </footer>
+</div>
 </body>
 </html>
