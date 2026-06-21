@@ -1,0 +1,83 @@
+<!-- customers.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Handled · Customers</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar">
+      <div class="logo">Handled<span>.</span></div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="workers.html">Workers</a>
+        <a href="customers.html">Customers</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <a href="workers.html" class="btn btn-outline" style="margin-right:0.5rem;">Worker</a>
+        <a href="customers.html" class="btn">Post Job</a>
+      </div>
+    </nav>
+
+    <h2 class="section-title">Customer dashboard</h2>
+    <div class="two-col">
+      <div class="profile-card">
+        <h3>Login / Register</h3>
+        <form>
+          <div class="form-group"><label>Full name</label><input type="text" placeholder="Oarabile M." /></div>
+          <div class="form-group"><label>Email</label><input type="email" placeholder="customer@handled.bw" /></div>
+          <div class="form-group"><label>Password</label><input type="password" /></div>
+          <div class="form-group"><label>Phone</label><input type="text" placeholder="+267 71 234 567" /></div>
+          <button type="submit" class="btn">Login / Create account</button>
+        </form>
+      </div>
+      <div class="profile-card">
+        <h3>Post a new task</h3>
+        <form>
+          <div class="form-group"><label>Service</label>
+            <select><option>House Cleaning</option><option>Gardening</option><option>Handyman</option><option>Plumbing</option><option>Moving</option><option>Delivery</option><option>Miscellaneous</option></select>
+          </div>
+          <div class="form-group"><label>Description</label><textarea rows="2" placeholder="Describe your job..."></textarea></div>
+          <div class="form-group"><label>Preferred date &amp; time</label><input type="datetime-local" /></div>
+          <div class="form-group"><label>Pin location on map</label>
+            <div id="customerMap" class="map-container"></div>
+          </div>
+          <button type="submit" class="btn">Post job – workers will review</button>
+          <p class="transport-note" style="margin-top:0.5rem;">📍 Transport: P30 inside Gaborone · P50 outside (auto-added)</p>
+        </form>
+        <div class="photo-upload-section">
+          <p><strong>📸 After worker accepts:</strong> upload before &amp; after photos</p>
+          <button class="btn btn-outline small-btn">Before</button><button class="btn btn-outline small-btn">After</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>© 2026 Handled · built for Botswana</p>
+    </div>
+  </div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const container = document.getElementById('customerMap');
+      if (!container) return;
+      const map = L.map(container).setView([-24.6282, 25.9231], 13);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap'
+      }).addTo(map);
+      let marker = null;
+      map.on('click', function(e) {
+        if (marker) map.removeLayer(marker);
+        marker = L.marker(e.latlng).addTo(map);
+      });
+    });
+  </script>
+</body>
+</html>
