@@ -2,56 +2,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Handled · About</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Handled – About</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <nav class="navbar">
-      <div class="logo">Handled<span>.</span></div>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="workers.html">Workers</a>
-        <a href="customers.html">Customers</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+<nav class="navbar">
+  <div class="nav-logo" onclick="location.href='index.html'">Handled</div>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="workers.html" class="nav-link">Workers</a>
+    <a href="customers.html" class="nav-link">Customers</a>
+    <a href="about.html" class="nav-link active">About</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+  <div class="nav-actions">
+    <a href="customers.html" class="btn btn-ghost btn-sm">Login</a>
+    <a href="customers.html" class="btn btn-primary btn-sm">Get Started</a>
+  </div>
+</nav>
+
+<div class="page active" id="about">
+  <div class="section">
+    <div style="max-width:1140px;margin:0 auto;">
+      <div class="about-hero">
+        <div>
+          <div class="section-label">Our Story</div>
+          <h2 class="about-title">Built in Botswana,<br>for Botswana.</h2>
+          <p class="about-body">Handled was born out of a simple frustration — finding a reliable, affordable local worker took too long and too many phone calls. We built a platform that makes it effortless: post a task, get matched with a verified worker nearby, and get it done. No middlemen, no waiting.</p>
+          <p class="about-body" style="margin-top:12px;">We started in Gaborone and we're growing fast. Our mission is to connect everyday households with skilled workers across Botswana — creating income for workers and peace of mind for customers.</p>
+          <div style="display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;">
+            <a href="customers.html" class="btn btn-primary">Post a Task</a>
+            <a href="contact.html" class="btn btn-ghost">Get in Touch</a>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="about-tile"><div class="at-icon">🏠</div><h4>Home Services</h4><p>Everything your home needs, from a single platform.</p></div>
+          <div class="about-tile"><div class="at-icon">🤝</div><h4>Community First</h4><p>We support local workers and local households equally.</p></div>
+          <div class="about-tile"><div class="at-icon">⭐</div><h4>Quality Assured</h4><p>Every job is rated. Bad workers don't last on Handled.</p></div>
+          <div class="about-tile"><div class="at-icon">🚀</div><h4>Growing Fast</h4><p>Launched 2024. Over 1,200 tasks completed and counting.</p></div>
+        </div>
       </div>
-      <div>
-        <a href="workers.html" class="btn btn-outline" style="margin-right:0.5rem;">Worker</a>
-        <a href="customers.html" class="btn">Post Job</a>
+      <div class="section-label">Our Values</div>
+      <div class="section-title">What drives us.</div>
+      <div class="values-grid">
+        <div class="value-card"><div class="value-icon">🔒</div><h4>Trust</h4><p>Every worker is verified. Every review is real. We don't compromise on safety.</p></div>
+        <div class="value-card"><div class="value-icon">⚡</div><h4>Speed</h4><p>Time is precious. We obsess over reducing the gap between request and response.</p></div>
+        <div class="value-card"><div class="value-icon">🌍</div><h4>Community</h4><p>We create dignified, flexible income for skilled workers across Botswana.</p></div>
+        <div class="value-card"><div class="value-icon">💡</div><h4>Simplicity</h4><p>No apps to download, no complicated steps. Just post and get it done.</p></div>
       </div>
-    </nav>
-
-    <h2 class="section-title">Our story</h2>
-    <p class="story-intro"><strong>Built for Botswana</strong><br/>Finding trustworthy help for home jobs in Botswana has always been word-of-mouth. Handled changes that — by making it easy to post a task, find a verified worker, and complete a job with full accountability.</p>
-    <div class="grid-3">
-      <div class="card">🛡️ <h3>Trust first</h3><p>Every worker is KYC-verified before they can take any job.</p></div>
-      <div class="card">💬 <h3>Transparency</h3><p>Prices are fixed and shown before you post. No surprises.</p></div>
-      <div class="card">📸 <h3>Accountability</h3><p>Before and after photos are mandatory on every job.</p></div>
-      <div class="card">🤝 <h3>Fair for workers</h3><p>Workers set their availability and keep 85% of every job.</p></div>
-    </div>
-
-    <h3 class="section-title" style="font-size:1.8rem;">Trust &amp; Safety</h3>
-    <div class="grid-3">
-      <div class="card"><strong>📞 Contact support within 48h</strong><p>Email or WhatsApp us within 48 hours of job marked done.</p></div>
-      <div class="card"><strong>🖼️ We review the photos</strong><p>Both before and after photos are reviewed by our team.</p></div>
-      <div class="card"><strong>⚖️ Mediation &amp; resolution</strong><p>We contact both parties and work toward a fair outcome. Refunds assessed case by case.</p></div>
-      <div class="card"><strong>⬆️ Escalation</strong><p>If unresolved, case may be referred to third party or authority.</p></div>
-    </div>
-
-    <h3 class="section-title" style="font-size:1.8rem;">Our workers in action</h3>
-    <div class="grid-3">
-      <div class="card">📷 Real worker photo <br/><span class="placeholder-text">to be added</span></div>
-      <div class="card">📷 Before / after job <br/><span class="placeholder-text">to be added</span></div>
-      <div class="card">📷 Gaborone home <br/><span class="placeholder-text">to be added</span></div>
-    </div>
-
-    <div class="footer">
-      <p>© 2026 Handled · built for Botswana</p>
     </div>
   </div>
+  <footer>
+    <div class="footer-logo">Handled</div>
+    <div class="footer-links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+    <div class="footer-copy">© 2025 Handled · Gaborone, Botswana</div>
+  </footer>
+</div>
 </body>
 </html>
