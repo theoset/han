@@ -1,0 +1,72 @@
+<!-- workers.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Handled · Workers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar">
+      <div class="logo">Handled<span>.</span></div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="workers.html">Workers</a>
+        <a href="customers.html">Customers</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <a href="workers.html" class="btn btn-outline" style="margin-right:0.5rem;">Worker</a>
+        <a href="customers.html" class="btn">Post Job</a>
+      </div>
+    </nav>
+
+    <h2 class="section-title">Worker portal</h2>
+    <div class="two-col">
+      <div class="profile-card">
+        <h3>Create account</h3>
+        <form id="workerForm">
+          <div class="form-group"><label>Full name</label><input type="text" placeholder="Tevin George" /></div>
+          <div class="form-group"><label>Email</label><input type="email" placeholder="worker@handled.bw" /></div>
+          <div class="form-group"><label>Password</label><input type="password" /></div>
+          <div class="form-group"><label>Phone</label><input type="text" placeholder="+267 71 234 567" /></div>
+          <div class="form-group"><label>Area / Location</label><input type="text" placeholder="Gaborone, Block 8" /></div>
+          <div class="form-group"><label>Select up to 4 tasks</label>
+            <select multiple style="height:100px;">
+              <option>House Cleaning</option><option>Gardening</option><option>Handyman</option>
+              <option>Plumbing</option><option>Moving</option><option>Delivery</option><option>Miscellaneous</option>
+            </select>
+          </div>
+          <div class="form-group"><label>ID / Passport</label><input type="file" /></div>
+          <div class="form-group"><label>Selfie</label><input type="file" /></div>
+          <div class="form-group"><label>Proof of address (optional)</label><input type="file" /></div>
+          <div class="form-group checkbox-label"><label><input type="checkbox" /> I agree to KYC &amp; Privacy Consent. Documents used solely for verification.</label></div>
+          <button type="submit" class="btn">Register &amp; Submit KYC</button>
+        </form>
+        <p style="margin-top:1rem;">Already have an account? <a href="#" onclick="alert('Login form would appear')">Login</a></p>
+      </div>
+      <div class="profile-card">
+        <h3>Workers online – view tasks</h3>
+        <div class="task-list">
+          <div class="task-item"><strong>🧹 House cleaning · 3BR</strong> P350 · Gaborone <br/><small>Posted 12min ago</small> <button class="btn small-btn">Accept</button></div>
+          <div class="task-item"><strong>🌿 Gardening · Large</strong> P350 · Phakalane <br/><small>Posted 1h ago</small> <button class="btn small-btn">Accept</button></div>
+          <div class="task-item"><strong>🔧 Handyman · TV mount</strong> P250 · Gaborone <br/><small>Posted 3h ago</small> <button class="btn small-btn">Accept</button></div>
+          <div class="task-item"><em>+ transport fee auto-added (P30/P50)</em></div>
+        </div>
+        <div class="photo-upload-section">
+          <p><strong>📸 After accepting a job:</strong> upload before &amp; after photos</p>
+          <div><button class="btn btn-outline small-btn">Before photo</button><button class="btn btn-outline small-btn">After photo</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>© 2026 Handled · built for Botswana</p>
+    </div>
+  </div>
+</body>
+</html>
