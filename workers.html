@@ -2,71 +2,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Handled · Workers</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Handled – Workers</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <nav class="navbar">
-      <div class="logo">Handled<span>.</span></div>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="workers.html">Workers</a>
-        <a href="customers.html">Customers</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div>
-        <a href="workers.html" class="btn btn-outline" style="margin-right:0.5rem;">Worker</a>
-        <a href="customers.html" class="btn">Post Job</a>
-      </div>
-    </nav>
+<nav class="navbar">
+  <div class="nav-logo" onclick="location.href='index.html'">Handled</div>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="workers.html" class="nav-link active">Workers</a>
+    <a href="customers.html" class="nav-link">Customers</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+  <div class="nav-actions">
+    <a href="customers.html" class="btn btn-ghost btn-sm">Login</a>
+    <a href="customers.html" class="btn btn-primary btn-sm">Get Started</a>
+  </div>
+</nav>
 
-    <h2 class="section-title">Worker portal</h2>
-    <div class="two-col">
-      <div class="profile-card">
-        <h3>Create account</h3>
-        <form id="workerForm">
-          <div class="form-group"><label>Full name</label><input type="text" placeholder="Tevin George" /></div>
-          <div class="form-group"><label>Email</label><input type="email" placeholder="worker@handled.bw" /></div>
-          <div class="form-group"><label>Password</label><input type="password" /></div>
-          <div class="form-group"><label>Phone</label><input type="text" placeholder="+267 71 234 567" /></div>
-          <div class="form-group"><label>Area / Location</label><input type="text" placeholder="Gaborone, Block 8" /></div>
-          <div class="form-group"><label>Select up to 4 tasks</label>
-            <select multiple style="height:100px;">
-              <option>House Cleaning</option><option>Gardening</option><option>Handyman</option>
-              <option>Plumbing</option><option>Moving</option><option>Delivery</option><option>Miscellaneous</option>
-            </select>
+<div class="page active" id="workers-page">
+  <div class="section">
+    <div style="max-width:1140px;margin:0 auto;">
+      <div class="section-label">Our Workers</div>
+      <div class="section-title">Meet the people<br>who get it done.</div>
+      <p class="section-sub">Verified, rated and ready. Every worker on Handled is screened before going live on the platform.</p>
+      <div class="workers-grid">
+        <div class="worker-card"><div class="worker-top"><div class="w-avatar" style="background:#4ade80;">K</div><div class="w-info"><h4>Kabo Sithole</h4><p>Gaborone, Block 6</p><div class="w-online"><span class="dot dot-g"></span><span style="color:var(--success);font-size:.72rem;">Online now</span></div></div></div><div class="w-skills"><span class="skill-tag">🌿 Gardening</span><span class="skill-tag">🧹 Cleaning</span></div><div class="w-stats"><div class="wstat"><div class="wstat-num">87</div><div class="wstat-lbl">Jobs done</div></div><div class="wstat"><div class="wstat-num">4.9★</div><div class="wstat-lbl">Rating</div></div><div class="wstat"><div class="wstat-num">2yr</div><div class="wstat-lbl">Exp.</div></div></div></div>
+        <div class="worker-card"><div class="worker-top"><div class="w-avatar" style="background:#f0c040;">T</div><div class="w-info"><h4>Tshego Moleleki</h4><p>Gaborone, Broadhurst</p><div class="w-online"><span class="dot dot-g"></span><span style="color:var(--success);font-size:.72rem;">Online now</span></div></div></div><div class="w-skills"><span class="skill-tag">⚡ Electrician</span><span class="skill-tag">🔧 Plumbing</span></div><div class="w-stats"><div class="wstat"><div class="wstat-num">124</div><div class="wstat-lbl">Jobs done</div></div><div class="wstat"><div class="wstat-num">5.0★</div><div class="wstat-lbl">Rating</div></div><div class="wstat"><div class="wstat-num">5yr</div><div class="wstat-lbl">Exp.</div></div></div></div>
+        <div class="worker-card"><div class="worker-top"><div class="w-avatar" style="background:#e07b30;">L</div><div class="w-info"><h4>Lesego Dube</h4><p>Gaborone, Tlokweng</p><div class="w-online"><span class="dot dot-y"></span><span style="color:var(--muted);font-size:.72rem;">Away</span></div></div></div><div class="w-skills"><span class="skill-tag">🛒 Errands</span><span class="skill-tag">🧹 Cleaning</span></div><div class="w-stats"><div class="wstat"><div class="wstat-num">56</div><div class="wstat-lbl">Jobs done</div></div><div class="wstat"><div class="wstat-num">4.8★</div><div class="wstat-lbl">Rating</div></div><div class="wstat"><div class="wstat-num">1yr</div><div class="wstat-lbl">Exp.</div></div></div></div>
+      </div>
+      <div class="worker-auth-box">
+        <div class="section-label" style="margin-bottom:8px;">Join / Login</div>
+        <h3 style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;margin-bottom:6px;">Earn on your own schedule.</h3>
+        <p style="font-size:.83rem;color:var(--muted);margin-bottom:22px;">Register as a worker, set your skills, go online and start accepting jobs in your area.</p>
+        <div class="tab-row">
+          <button class="tab active" id="wt1" onclick="wSwitchTab('wlogin')">Worker Login</button>
+          <button class="tab" id="wt2" onclick="wSwitchTab('wreg')">Register</button>
+        </div>
+        <div id="wlogin-form">
+          <div class="form-group"><label>Email</label><input type="email" id="wl-email" placeholder="your@email.com"></div>
+          <div class="form-group"><label>Password</label><input type="password" id="wl-pass" placeholder="••••••••"></div>
+          <button class="auth-submit" onclick="workerLogin()">Login as Worker →</button>
+        </div>
+        <div id="wreg-form" style="display:none;">
+          <div class="form-group"><label>Full name</label><input type="text" id="wr-name" placeholder="e.g. Kabo Sithole"></div>
+          <div class="form-row">
+            <div class="form-group"><label>Email</label><input type="email" id="wr-email" placeholder="you@email.com"></div>
+            <div class="form-group"><label>Password</label><input type="password" id="wr-pass" placeholder="••••••••"></div>
           </div>
-          <div class="form-group"><label>ID / Passport</label><input type="file" /></div>
-          <div class="form-group"><label>Selfie</label><input type="file" /></div>
-          <div class="form-group"><label>Proof of address (optional)</label><input type="file" /></div>
-          <div class="form-group checkbox-label"><label><input type="checkbox" /> I agree to KYC &amp; Privacy Consent. Documents used solely for verification.</label></div>
-          <button type="submit" class="btn">Register &amp; Submit KYC</button>
-        </form>
-        <p style="margin-top:1rem;">Already have an account? <a href="#" onclick="alert('Login form would appear')">Login</a></p>
-      </div>
-      <div class="profile-card">
-        <h3>Workers online – view tasks</h3>
-        <div class="task-list">
-          <div class="task-item"><strong>🧹 House cleaning · 3BR</strong> P350 · Gaborone <br/><small>Posted 12min ago</small> <button class="btn small-btn">Accept</button></div>
-          <div class="task-item"><strong>🌿 Gardening · Large</strong> P350 · Phakalane <br/><small>Posted 1h ago</small> <button class="btn small-btn">Accept</button></div>
-          <div class="task-item"><strong>🔧 Handyman · TV mount</strong> P250 · Gaborone <br/><small>Posted 3h ago</small> <button class="btn small-btn">Accept</button></div>
-          <div class="task-item"><em>+ transport fee auto-added (P30/P50)</em></div>
-        </div>
-        <div class="photo-upload-section">
-          <p><strong>📸 After accepting a job:</strong> upload before &amp; after photos</p>
-          <div><button class="btn btn-outline small-btn">Before photo</button><button class="btn btn-outline small-btn">After photo</button></div>
+          <div class="form-group"><label>Primary skill</label>
+            <select id="wr-skill"><option value="">Select skill…</option><option>Gardening</option><option>Cleaning</option><option>Electrician</option><option>Errands</option><option>Plumbing</option></select>
+          </div>
+          <div class="form-group"><label>Location / Area</label><input type="text" id="wr-loc" placeholder="e.g. Gaborone, Block 8"></div>
+          <button class="auth-submit" onclick="workerRegister()">Create Worker Account →</button>
         </div>
       </div>
-    </div>
-
-    <div class="footer">
-      <p>© 2026 Handled · built for Botswana</p>
     </div>
   </div>
+  <footer>
+    <div class="footer-logo">Handled</div>
+    <div class="footer-links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+    <div class="footer-copy">© 2025 Handled · Gaborone, Botswana</div>
+  </footer>
+</div>
+
+<script>
+// Simplified worker auth for demo
+let users = JSON.parse(localStorage.getItem('hd_users')||'{}');
+function wSwitchTab(tab){
+  document.getElementById('wt1').classList.toggle('active', tab==='wlogin');
+  document.getElementById('wt2').classList.toggle('active', tab==='wreg');
+  document.getElementById('wlogin-form').style.display = tab==='wlogin' ? '' : 'none';
+  document.getElementById('wreg-form').style.display = tab==='wreg' ? '' : 'none';
+}
+function workerLogin(){
+  const email = document.getElementById('wl-email').value.trim();
+  const pass = document.getElementById('wl-pass').value;
+  if(!email||!pass){alert('Fill in all fields.');return;}
+  const u = users[email];
+  if(!u||u.pass!==pass||u.role!=='worker'){alert('Invalid credentials.');return;}
+  alert('Logged in as worker: '+u.name);
+}
+function workerRegister(){
+  const name = document.getElementById('wr-name').value.trim();
+  const email = document.getElementById('wr-email').value.trim();
+  const pass = document.getElementById('wr-pass').value;
+  const skill = document.getElementById('wr-skill').value;
+  const loc = document.getElementById('wr-loc').value.trim();
+  if(!name||!email||!pass||!skill){alert('Fill in all fields.');return;}
+  if(users[email]){alert('Account exists.');return;}
+  users[email]={name,email,pass,role:'worker',skill,location:loc};
+  localStorage.setItem('hd_users',JSON.stringify(users));
+  alert('Worker account created! You can now login.');
+}
+</script>
 </body>
 </html>
